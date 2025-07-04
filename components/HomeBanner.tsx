@@ -15,9 +15,10 @@ const HomeBanner = () => {
   </span>
 </Title>
 
-                <p className="text-shop_dark_green/80 text-sm lg:text-base">
-                "Von Erde zu Tisch - rein und natürlich."
-                </p>
+               <p className="text-shop_dark_green/80 text-sm lg:text-base">
+  &quot;Von Erde zu Tisch - rein und natürlich.&quot;
+</p>
+
                 <Link
                     href={"/shop"}
                     className="bg-shop_dark_green/90 text-white/90 px-5 py-2 rounded-md text-sm font-semibold hover:text-white hover:bg-shop_dark_green hoverEffect"

@@ -34,13 +34,9 @@ const HelpCenterPage: React.FC = () => {
     },
   ];
 
-  const ORDERS: FAQItem[] = [
-    // Add your order-related FAQs here
-  ];
+  
 
-  const RETURNS: FAQItem[] = [
-    // Add your return-related FAQs here
-  ];
+ 
 
   const toggleFAQ = (index: number) => {
     setActiveFAQ(current => current === index ? null : index);

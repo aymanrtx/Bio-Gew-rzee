@@ -11,21 +11,21 @@ const TermsPage: React.FC = () => {
         <div>
           <h2 className="text-2xl font-semibold mb-2">1. Acceptance of Terms</h2>
           <p>
-            By accessing and using Bio Gewürze's services, you agree to be bound by these Terms and Conditions.
+            By accessing and using Bio Gewürze&apos;s services, you agree to be bound by these Terms and Conditions.
           </p>
         </div>
 
         <div>
           <h2 className="text-2xl font-semibold mb-2">2. Use of Services</h2>
           <p>
-            You agree to use Bio Gewürze's services only for lawful purposes and in accordance with these Terms and Conditions.
+            You agree to use Bio Gewürze&apos;s services only for lawful purposes and in accordance with these Terms and Conditions.
           </p>
         </div>
 
         <div>
           <h2 className="text-2xl font-semibold mb-2">3. Intellectual Property</h2>
           <p>
-            All content and materials available on Bio Gewürze's services are the property of Bio Gewürze and are protected by applicable intellectual property laws.
+            All content and materials available on Bio Gewürze&apos;s services are the property of Bio Gewürze and are protected by applicable intellectual property laws.
           </p>
         </div>
 

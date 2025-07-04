@@ -1,9 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { urlFor } from "@/sanity/lib/image";
 import { GitCompareArrows, Headset, ShieldCheck, Truck } from "lucide-react";
-
 
 const extraData = [
   {
@@ -30,7 +26,6 @@ const extraData = [
 
 const ShopByBrands = async () => {
   return (
-   
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 p-2 shadow-sm hover:shadow-shop_light_green/20 py-5">
         {extraData?.map((item, index) => (
           <div

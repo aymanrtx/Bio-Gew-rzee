@@ -5,7 +5,7 @@ import React from "react";
 import PriceView from "@/components/PriceView";
 import AddToCartButton from "@/components/AddToCartButton";
 import ProductCharacteristics from "@/components/ProductCharacteristics";
-import { CornerDownLeft, StarIcon, Truck } from "lucide-react";
+import { CornerDownLeft,Truck } from "lucide-react";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import { FiShare2 } from "react-icons/fi";
 import { RxBorderSplit } from "react-icons/rx";
