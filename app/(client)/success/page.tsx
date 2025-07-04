@@ -11,7 +11,6 @@ import Link from "next/link";
 const SuccessPage = () => {
     const {resetCart} = useStore();
     const searchParams = useSearchParams();
-    const sessio_id = searchParams.get("session_id");
     const orderNumber = searchParams.get("orderNumber");
 
     useEffect(() => {
