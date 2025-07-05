@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  typpescript:{
+  typescript:{
     ignoreBuildErrors:true,
   },
 };
