@@ -47,20 +47,15 @@ const Footer = () => {
 
           {/* 3. Categories */}
           <div>
-            <SubTitle className="text-gray-900 font-semibold mb-4">Categories</SubTitle>
-            <ul className="space-y-2 text-gray-700 text-sm">
-              {categoriesData?.map((item) => (
-                <li key={item?.title}>
-                  <Link
-                    href={`/category/${item?.href}`}
-                    className="hover:text-shop_light_green transition-colors duration-200 font-medium"
-                  >
-                    {item?.title}
-                  </Link>
-                </li>
-              ))}
+            <SubTitle className="text-gray-900 font-semibold mb-4">Warum BIO-GEWÜRZE?</SubTitle>
+            <ul className="text-sm text-gray-700 space-y-2 list-disc list-inside">
+              <li>100% natürliche Produkte</li>
+              <li>Nachhaltig & fair gehandelt</li>
+              <li>Mit Liebe in Marokko handgefertigt</li>
+              <li>Schneller & zuverlässiger Versand in ganz Europa</li>
             </ul>
           </div>
+
         </div>
 
         {/* Footer bottom */}
