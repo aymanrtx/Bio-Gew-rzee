@@ -3,6 +3,9 @@ import { Product } from '@/sanity.types';
 import { Heart } from 'lucide-react';
 import React from 'react'
 
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const AddToWishlistButton = ({
   product,
   className,
