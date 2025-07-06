@@ -20,13 +20,13 @@ const PRODUCT_BY_SLUG_QUERY = defineQuery(
   `*[_type == "product" && slug.current == $slug] | order(name asc) [0]`
 );
 
+
 const MY_ORDERS_QUERY =
   defineQuery(`*[_type == 'order' && clerkUserId == $userId] | order(orderData desc){
 ...,products[]{
   ...,product->
 }
 }`);
-
 const GET_ALL_BLOG = defineQuery(
   `*[_type == 'blog'] | order(publishedAt desc)[0...$quantity]{
   ...,  
@@ -77,8 +77,14 @@ const OTHERS_BLOG_QUERY = defineQuery(`*[
     "slug": slug.current,
   }
 }`);
+export {
+  LATEST_BLOG_QUERY,
+  DEAL_PRODUCTS,
+  PRODUCT_BY_SLUG_QUERY,
+  MY_ORDERS_QUERY,
+  GET_ALL_BLOG,
+  SINGLE_BLOG_QUERY,
+  BLOG_CATEGORIES,
+  OTHERS_BLOG_QUERY,
+};
 
-
-
-export{LATEST_BLOG_QUERY,DEAL_PRODUCTS,PRODUCT_BY_SLUG_QUERY,MY_ORDERS_QUERY,GET_ALL_BLOG,
-  SINGLE_BLOG_QUERY,BLOG_CATEGORIES,OTHERS_BLOG_QUERY};

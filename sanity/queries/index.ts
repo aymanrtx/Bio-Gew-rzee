@@ -1,7 +1,14 @@
 import { sanityFetch } from "../lib/live";
-import { DEAL_PRODUCTS, LATEST_BLOG_QUERY, PRODUCT_BY_SLUG_QUERY,MY_ORDERS_QUERY,GET_ALL_BLOG,
-  SINGLE_BLOG_QUERY,BLOG_CATEGORIES,OTHERS_BLOG_QUERY} from "./query";
-
+import {
+  BLOG_CATEGORIES,
+  DEAL_PRODUCTS,
+  GET_ALL_BLOG,
+  LATEST_BLOG_QUERY,
+  MY_ORDERS_QUERY,
+  OTHERS_BLOG_QUERY,
+  PRODUCT_BY_SLUG_QUERY,
+  SINGLE_BLOG_QUERY,
+} from "./query";
 
 const getCategories = async (quantity?: number) => {
   try {
@@ -14,16 +21,17 @@ const getCategories = async (quantity?: number) => {
           ...,
           "productCount": count(*[_type == "product" && references(^._id)])
         }`;
-        const { data } = await sanityFetch({
-            query,
-            params: quantity ? { quantity } : {},
-          });
-          return data;
+    const { data } = await sanityFetch({
+      query,
+      params: quantity ? { quantity } : {},
+    });
+    return data;
   } catch (error) {
     console.log("Error fetching categories", error);
     return [];
   }
 };
+
 
 
 const getLatestBlogs = async () => {
@@ -35,17 +43,15 @@ const getLatestBlogs = async () => {
     return [];
   }
 };
-
 const getDealProducts = async () => {
   try {
-    const { data } = await sanityFetch({ query: DEAL_PRODUCTS});
+    const { data } = await sanityFetch({ query: DEAL_PRODUCTS });
     return data ?? [];
   } catch (error) {
     console.log("Error fetching deal Products:", error);
     return [];
   }
 };
-
 const getProductBySlug = async (slug: string) => {
   try {
     const product = await sanityFetch({
@@ -63,17 +69,18 @@ const getProductBySlug = async (slug: string) => {
 
 const getMyOrders = async (userId: string) => {
   try {
+    console.log("Fetching orders for userId:", userId);
     const orders = await sanityFetch({
       query: MY_ORDERS_QUERY,
       params: { userId },
     });
-    return orders?.data || null;
+    console.log("Orders fetched:", orders?.data?.length || 0);
+    return orders?.data || [];
   } catch (error) {
-    console.error("Error fetching product by ID:", error);
-    return null;
+    console.error("Error fetching orders for userId:", userId, error);
+    return [];
   }
 };
-
 const getAllBlogs = async (quantity: number) => {
   try {
     const { data } = await sanityFetch({
@@ -99,8 +106,6 @@ const getSingleBlog = async (slug: string) => {
     return [];
   }
 };
-
-
 const getBlogCategories = async () => {
   try {
     const { data } = await sanityFetch({
@@ -125,6 +130,16 @@ const getOthersBlog = async (slug: string, quantity: number) => {
     return [];
   }
 };
+export {
+  getCategories,
+  getLatestBlogs,
+  getDealProducts,
+  getProductBySlug,
+  getMyOrders,
+  getAllBlogs,
+  getSingleBlog,
+  getBlogCategories,
+  getOthersBlog,
+};
 
 
-export{getCategories,getLatestBlogs,getDealProducts,getProductBySlug,getMyOrders,getAllBlogs,getSingleBlog,getBlogCategories,getOthersBlog};
