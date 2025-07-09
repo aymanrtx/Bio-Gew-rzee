@@ -15,22 +15,16 @@ export async function POST(req: NextRequest) {
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
   if (!sig || !webhookSecret) {
     console.error("[Security] Invalid webhook request");
-    return NextResponse.json(
-      { error: "Invalid request" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
   let event: Stripe.Event;
   try {
     event = stripe.webhooks.constructEvent(body, sig, webhookSecret);
     console.log(`[System] Handling ${event.type} event`);
-  } catch (error) {
+  } catch {
     console.error("[Security] Webhook verification failed");
-    return NextResponse.json(
-      { error: "Invalid request" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
   try {
@@ -53,12 +47,9 @@ export async function POST(req: NextRequest) {
       default:
         console.log(`[System] Received unhandled event type`);
     }
-  } catch (error) {
+  } catch {
     console.error("[System] Error processing webhook");
-    return NextResponse.json(
-      { error: "Processing error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Processing error" }, { status: 500 });
   }
 
   return NextResponse.json({ received: true });
@@ -79,12 +70,12 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
 
   const status = session.payment_status === "paid" ? "paid" : "pending";
   const order = await createOrderInSanity(session, status);
-  
+
   if (status === "paid") {
     await updateStockForOrder(order._id);
     console.log("[Inventory] Updated product quantities");
   }
-  
+
   if (session.invoice) {
     try {
       const invoice = await stripe.invoices.retrieve(
@@ -92,7 +83,7 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
       );
       await attachInvoiceToOrder(order._id, invoice);
       console.log("[Order] Added invoice details");
-    } catch (error) {
+    } catch {
       console.error("[Order] Failed to add invoice");
     }
   }
@@ -119,7 +110,7 @@ async function handleInvoicePaid(invoiceRaw: Stripe.Invoice) {
     const subscription = typeof invoice.subscription === "string"
       ? await stripe.subscriptions.retrieve(invoice.subscription)
       : invoice.subscription;
-      
+
     if (subscription.metadata?.checkoutSessionId) {
       orders = await backendClient.fetch(
         '*[_type == "order" && stripeCheckoutSessionId == $sessionId]',
@@ -130,7 +121,7 @@ async function handleInvoicePaid(invoiceRaw: Stripe.Invoice) {
 
   if (orders.length === 0) {
     let paymentIntentId: string | undefined;
-    
+
     if (typeof invoice.payment_intent === "string") {
       paymentIntentId = invoice.payment_intent;
     } else if (invoice.payment_intent?.id) {
@@ -277,7 +268,7 @@ async function attachInvoiceToOrder(orderId: string, invoice: Stripe.Invoice) {
       })
       .commit();
     console.log("[Order] Successfully updated invoice details");
-  } catch (error) {
+  } catch {
     console.error("[Order] Failed to update invoice details");
   }
 }
@@ -289,10 +280,15 @@ async function updateOrderStatus(orderId: string, status: string) {
       .set({ status })
       .commit();
     console.log(`[Order] Updated status to ${status}`);
-  } catch (error) {
+  } catch {
     console.error("[Order] Failed to update status");
   }
 }
+
+type ProductEntry = {
+  product: { _ref: string };
+  quantity: number;
+};
 
 async function updateStockForOrder(orderId: string) {
   const order = await backendClient.getDocument(orderId);
@@ -301,9 +297,9 @@ async function updateStockForOrder(orderId: string) {
     return;
   }
 
-  const stockUpdates = order.products
-    .filter((p: any) => p.product?._ref && p.quantity)
-    .map((p: any) => ({
+  const stockUpdates = (order.products as ProductEntry[])
+    .filter(p => p.product?._ref && p.quantity)
+    .map(p => ({
       productId: p.product._ref,
       quantity: p.quantity,
     }));
@@ -325,7 +321,7 @@ async function updateStockLevels(stockUpdates: { productId: string; quantity: nu
         .patch(productId)
         .set({ stock: newStock })
         .commit();
-    } catch (error) {
+    } catch {
       console.error("[Inventory] Failed to update stock");
     }
   }
