@@ -69,18 +69,17 @@ const getProductBySlug = async (slug: string) => {
 
 const getMyOrders = async (userId: string) => {
   try {
-    console.log("Fetching orders for userId:", userId);
     const orders = await sanityFetch({
       query: MY_ORDERS_QUERY,
       params: { userId },
     });
-    console.log("Orders fetched:", orders?.data?.length || 0);
     return orders?.data || [];
   } catch (error) {
-    console.error("Error fetching orders for userId:", userId, error);
+    console.error("Error fetching orders for userId:", error);
     return [];
   }
 };
+
 const getAllBlogs = async (quantity: number) => {
   try {
     const { data } = await sanityFetch({
