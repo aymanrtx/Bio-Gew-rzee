@@ -23,6 +23,7 @@ export const categoriesData = [
   { title: "Öle", href: "öle" },
   { title: "Schönheit", href: "schönheit" },
   { title: "Samen", href: "samen" },
+  { title: "Andere", href: "andere" },
 ];
 export const productType = [
   { title: "Gewürze", value: "gewürze" },
@@ -30,4 +31,5 @@ export const productType = [
   { title: "Öle", value: "öle" },
   { title: "Schönheit", value: "schönheit" },
   { title: "Samen", value: "samen" },
+  { title: "Andere", href: "andere" },
 ];
