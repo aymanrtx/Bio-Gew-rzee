@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="space-y-4 max-w-xs">
             <Logo className="font-bold text-xl text-shop_light_green" />
             <SubText className="text-gray-700">
-              Tradition trifft Natur – entdecke die Schätze Marokkos bei Bio Gewürze.
+              Tradition trifft Natur – entdecke die Schätze Marokkos bei Essenz-Marokkos
             </SubText>
             <div className="flex space-x-4 mt-2">
               <SocialMedia
@@ -47,7 +47,7 @@ const Footer = () => {
 
           {/* 3. Categories */}
           <div>
-            <SubTitle className="text-gray-900 font-semibold mb-4">Warum BIO-GEWÜRZE?</SubTitle>
+            <SubTitle className="text-gray-900 font-semibold mb-4">Warum Essenz-Marokkos?</SubTitle>
             <ul className="text-sm text-gray-700 space-y-2 list-disc list-inside">
               <li>100% natürliche Produkte</li>
               <li>Nachhaltig & fair gehandelt</li>
@@ -61,7 +61,7 @@ const Footer = () => {
         {/* Footer bottom */}
         <div className="mt-10 pt-6 border-t border-gray-200 text-center text-xs text-gray-500">
           © {new Date().getFullYear()}{" "}
-          <span className="font-bold text-shop_light_green">BIO-GEWÜRZE</span>. All rights reserved.
+          <span className="font-bold text-shop_light_green">Essenz-Marokkos</span>. All rights reserved.
         </div>
       </Container>
     </footer>

@@ -7,17 +7,18 @@ import { banner_1 } from "@/images";
 const HomeBanner = () => {
     return (
         <div className="py-16 md:py-0 bg-shop_light_pink rounded-lg px-6 md:px-10 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-10">
+            
+            {/* Left Text Section */}
             <div className="space-y-5 max-w-xl">
                 <Title className="text-4xl lg:text-5xl font-bold leading-tight text-shop_dark_green tracking-tight">
-  <span className="block text-shop_dark_green/90">Marokkos Schätze</span>
-  <span className="block text-shop_dark_green text-opacity-80 italic text-3xl lg:text-4xl mt-1">
-    Gewürze aus der Natur
-  </span>
-</Title>
+                    <span className="block text-shop_dark_green/90">
+                        Schönheit, Authentizität, Geschmack
+                    </span>
+                </Title>
 
-               <p className="text-shop_dark_green/80 text-sm lg:text-base">
-  &quot;Von Erde zu Tisch - rein und natürlich.&quot;
-</p>
+                <p className="text-shop_dark_green/80 text-sm lg:text-base">
+                    &quot;Von Erde zu Tisch - rein und natürlich.&quot;
+                </p>
 
                 <Link
                     href={"/shop"}
@@ -26,13 +27,17 @@ const HomeBanner = () => {
                     Jetzt kaufen
                 </Link>
             </div>
-            <div>
+
+            {/* Right Image Section */}
+            <div className="relative w-48 h-48 lg:w-60 lg:h-60">
                 <Image
                     src={banner_1}
-                     alt="banner_1"
-  className="hidden md:inline-flex w-48 lg:w-64 rounded-full object-cover shadow-lg"
-  />
+                    alt="banner_1"
+                    fill
+                    className="rounded-full object-cover shadow-lg filter brightness-90 contrast-90"
+                />
             </div>
+
         </div>
     );
 };

@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import { ClerkProvider } from '@clerk/nextjs';
 
 export const metadata: Metadata = {
-  title: "Bio-Gewürze ",
-  description: "Tradition trifft Natur – entdecke die Schätze Marokkos bei Bio Gewürze. ",
+  title: "Essenz-Marokkos",
+  description: "Tradition trifft Natur – entdecke die Schätze Marokkos bei Essenz-Marokkos. ",
 };
 
 export default function RootLayout({

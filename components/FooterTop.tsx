@@ -10,7 +10,7 @@ interface ContactItemData {
 const data: ContactItemData[] = [
   {
     title: "Komm uns besuchen",
-    subtitle: "unsere Website 'bio-gewurze'",
+    subtitle: "unsere Website 'Essenz-Marokkos'",
     icon: (
       <MapPin className="h-6 w-6 text-gray-600 group-hover:text-primary transition-colors" />
     ),
@@ -31,7 +31,7 @@ const data: ContactItemData[] = [
   },
   {
     title: "Mailen Sie uns",
-    subtitle: "bio.gewuerzee@gmail.com",
+    subtitle: "essenz.marokkos@gmail.com",
     icon: (
       <Mail className="h-6 w-6 text-gray-600 group-hover:text-primary transition-colors" />
     ),

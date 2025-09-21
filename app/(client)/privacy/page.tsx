@@ -40,8 +40,8 @@ const PrivacyPolicyPage: React.FC = () => {
           <h2 className="text-2xl font-semibold mb-2">5. Your Rights</h2>
           <p>
             You have the right to access, correct, or delete your personal information. Please contact us at{' '}
-            <a href="mailto:bio.gewuerze@gmail.com" className="text-shop_dark_green underline hover:text-green-800">
-              bio.gewuerze@gmail.com
+            <a href="mailto:essenz.marokkos@gmail.com" className="text-shop_dark_green underline hover:text-green-800">
+              essenz.marokkos@gmail.com
             </a>{' '}
             for assistance with these requests.
           </p>

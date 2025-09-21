@@ -11,35 +11,35 @@ const TermsPage: React.FC = () => {
         <div>
           <h2 className="text-2xl font-semibold mb-2">1. Acceptance of Terms</h2>
           <p>
-            By accessing and using Bio Gewürze&apos;s services, you agree to be bound by these Terms and Conditions.
+            By accessing and using Essenz-Marokkos&apos;s services, you agree to be bound by these Terms and Conditions.
           </p>
         </div>
 
         <div>
           <h2 className="text-2xl font-semibold mb-2">2. Use of Services</h2>
           <p>
-            You agree to use Bio Gewürze&apos;s services only for lawful purposes and in accordance with these Terms and Conditions.
+            You agree to use Essenz-Marokkos&apos;s services only for lawful purposes and in accordance with these Terms and Conditions.
           </p>
         </div>
 
         <div>
           <h2 className="text-2xl font-semibold mb-2">3. Intellectual Property</h2>
           <p>
-            All content and materials available on Bio Gewürze&apos;s services are the property of Bio Gewürze and are protected by applicable intellectual property laws.
+            All content and materials available on Essenz-Marokkos&apos;s services are the property of Essenz-Marokkos and are protected by applicable intellectual property laws.
           </p>
         </div>
 
         <div>
           <h2 className="text-2xl font-semibold mb-2">4. Limitation of Liability</h2>
           <p>
-            Bio Gewürze shall not be liable for any indirect, incidental, special, consequential or punitive damages resulting from your use of our services.
+            Essenz-Marokkos shall not be liable for any indirect, incidental, special, consequential or punitive damages resulting from your use of our services.
           </p>
         </div>
 
         <div>
           <h2 className="text-2xl font-semibold mb-2">5. Governing Law</h2>
           <p>
-            These Terms and Conditions shall be governed by and construed in accordance with the laws of the jurisdiction in which Bio Gewürze operates.
+            These Terms and Conditions shall be governed by and construed in accordance with the laws of the jurisdiction in which Essenz-Marokkos operates.
           </p>
         </div>
       </section>

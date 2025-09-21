@@ -16,10 +16,10 @@ const ContactPage: React.FC = () => {
           <p className="text-base">
             You can contact us anytime at:{' '}
             <a
-              href="mailto:bio.gewuerze@gmail.com"
+              href="mailto:essenz.marokkos@gmail.com"
               className="text-shop_dark_green font-medium underline hover:text-green-800"
             >
-              bio.gewuerze@gmail.com
+              essenz.marokkos@gmail.com
             </a>
           </p>
         </div>
@@ -27,7 +27,7 @@ const ContactPage: React.FC = () => {
         <div>
           <h2 className="text-xl font-semibold mb-2">Our Mission</h2>
          <p className="text-base">
-  At Bio Gewürze, we are passionate about bringing you high-quality organic spices. We&apos;re committed to sustainability, natural farming, and delivering exceptional flavors to your kitchen.
+  At Essenz-Marokkos, we are passionate about bringing you high-quality organic spices. We&apos;re committed to sustainability, natural farming, and delivering exceptional flavors to your kitchen.
 </p>
         </div>
 
