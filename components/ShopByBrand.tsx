@@ -4,12 +4,12 @@ import { GitCompareArrows, Headset, ShieldCheck, Truck } from "lucide-react";
 const extraData = [
   {
     title: "Kostenlose Lieferung",
-    description: "Kostenloser Versand ab 79,99 $",
+    description: "Kostenloser Versand ab 49,99 $",
     icon: <Truck size={45} />,
   },
   {
     title: "Kostenlose Rückgabe",
-    description: "Kostenloser Versand ab 79,99 $",
+    description: "Kostenloser Versand ab 49,99 $",
     icon: <GitCompareArrows size={45} />,
   },
   {

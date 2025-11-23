@@ -13,7 +13,7 @@ interface Props {
 const socialLink = [
   {
     title: "Instagram",
-    href: "https://www.instagram.com/bio_gewuze/#",
+    href: "https://www.instagram.com/essenz_marokkos",
     icon: <Instagram className="w-5 h-5" />,
   },
 ];
